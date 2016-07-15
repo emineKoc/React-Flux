@@ -6,12 +6,16 @@ module.exports = {
     path: __dirname,
     filename: 'app/js/main.js'
   },
+  resolve: {
+  extensions: ['', '.js', '.jsx']
+  },
   module:{
     loaders:[
       {
-        test: /\.jsx?$/,
-        loader:'babel',
-        exclude:/node_modules/
+        test: /.js$/,
+        loader: 'babel',
+        include: __dirname + "/src",
+        exclude: /node_modules/
       }
     ]
   }
